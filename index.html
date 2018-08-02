@@ -1,22 +1,80 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  </head>
-  <body>
-    <div id="app">
-      {{ message }}
-    </div>
-  </body>
+<html>
 
-  <script type="text/javascript">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+  <div id="app">
+    {{ message }}
+  </div>
+
+  <div id="app2">
+    <span v-bind:title="message">{{message}}</span>
+  </div>
+
+  <div id="app3">
+    <p v-if="seen">
+      이제 나를 볼 수 있어요.
+    </p>
+  </div>
+
+  <div id="app4">
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </div>
+
+  <div id="app5">
+    <p>
+      {{ message }}
+    </p>
+    <button v-on:click="reverseMessage">메세지 뒤집기</button>
+  </div>
+</body>
+
+<script type="text/javascript">
   var app = new Vue({
     el: '#app',
     data: {
-      message: '안녕하세요 Vue!!'
+      message: '안녕하세요 Vue!'
     }
   })
-  </script>
+
+  var app2 = new Vue({
+    el: '#app2',
+    data: {
+      message: '이 페이지는 ' + new Date() + '에 로드 되었습니다.'
+    }
+  })
+
+  var app3 = new Vue({
+    el: '#app3',
+    data: {
+      seen: true
+    }
+  })
+
+  var app4 = new Vue({
+    el: '#app4',
+    data: {
+      todos: [
+        { text: 'javascript 배우기' }, { text: 'Vuejs 배우기' }, { text: '멋진 것을 만들기' }
+      ]
+    }
+  })
+
+  var app5 = new Vue({
+    el: '#app5',
+    data: {
+      message: '안녕하세요! Vue.js!'
+    },
+    methods: {
+      reverseMessage: function () {
+        this.message = this.message.split('').reverse().join('');
+      }
+    }
+  })
+</script>
+
 </html>
