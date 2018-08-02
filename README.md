@@ -9,6 +9,11 @@
    - atom-live-server
    - atom-beauty
    - platformio-ide-terminal
+   - pigments
+   - codepeek
+   - highlight selected
+   - atom package sync
+   - minimap-cursorline
  - ShortCut
    - Join Line : Ctrl + J
    - Duplicate Line : Ctrl + Shift + D
