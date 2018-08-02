@@ -9,3 +9,6 @@
    - atom-live-server
    - atom-beauty
    - platformio-ide-terminal
+ - ShortCut
+   - Join Line : Ctrl + J
+   - Duplicate Line : Ctrl + Shift + D
